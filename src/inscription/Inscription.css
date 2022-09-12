@@ -1,0 +1,41 @@
+.navbar {
+  justify-content: center !important;
+}
+input {
+  background-color: #ebebeb;
+  border: 1px solid #ebebeb;
+  padding: 0 15px;
+  height: 48px;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 18px;
+  width: 100%;
+}
+label {
+  width: 80%;
+}
+
+button {
+  margin: 0 auto;
+  -webkit-appearance: button;
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.25);
+  color: white;
+  display: block;
+  height: 45px;
+  min-width: 121px;
+  outline: none;
+  width: 20%;
+}
+select {
+  background-color: #ebebeb;
+  border: 1px solid #ebebeb;
+  padding: 0 15px;
+  height: 48px;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 18px;
+  width: 100%;
+}
