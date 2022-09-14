@@ -1,5 +1,5 @@
 import React from 'react';
-import './inscription/Inscription.css';
+import './App.css';
 import logo from './assets/logo.svg';
 
 function App() {
