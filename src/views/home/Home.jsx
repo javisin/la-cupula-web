@@ -10,7 +10,7 @@ function Home() {
       <Page>
         <div className="container mt-3">
           <div className="bg-dark quote mx-auto">
-            <img className="w-50 quote-logo" src={logo} alt="Logo" />
+            <img className="quote-logo" src={logo} alt="Logo" />
             <div className="centered">
               <p className="font-italic">
                 &quot;Establece tus metas altas, y no pares hasta que llegues allí.&quot;
@@ -48,7 +48,7 @@ function Home() {
               También es posible el registro de forma presencial solicitando una cita previa para la inscripción.
             </p>
           </div>
-          <img className="w-25 d-block mx-auto" src={home} alt="Presentación" />
+          <img className="d-block mx-auto presentation-img" src={home} alt="Presentación" />
         </div>
       </Page>
     </div>

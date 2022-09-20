@@ -5,6 +5,7 @@
     color: white;
   }
   .quote-logo{
+    max-width: 50%;
     opacity: 0.2;
   }
 
@@ -20,5 +21,18 @@
   }
   h5 {
     font-family: 'Blacker', serif;
+  }
+
+  .presentation-img {
+    max-width: 30%;
+  }
+  /* responsive, form small screens, use 13px font size */
+  @media (max-width: 479px) {
+    .presentation-img {
+      max-width: 75%;
+    }
+    .quote-logo {
+      max-width: 75%;
+    }
   }
 }

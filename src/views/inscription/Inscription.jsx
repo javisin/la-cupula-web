@@ -100,7 +100,7 @@ function Inscription() {
             </label>
           </div>
 
-          <div className="row justify-content-center">
+          <div className="row justify-content-center mt-2">
             <button className="submit-button" type="submit">Unirse</button>
           </div>
 
@@ -113,7 +113,7 @@ function Inscription() {
 
         </form>
         <div className="row justify-content-end">
-          <img src={logo} className="App-logo" alt="logo" />
+          <img src={logo} alt="logo" />
         </div>
       </Page>
     </div>
