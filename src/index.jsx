@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Inscription from './views/inscription/Inscription';
 import Admin from './views/admin/Admin';
 import Home from './views/home/Home';
+import Schedule from './views/schedule/Schedule';
+import Lessons from './views/lessons/Lessons';
+import Prices from './views/prices/Prices';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,9 +16,11 @@ root.render(
 
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
         <Route path="inscripcion" element={<Inscription />} />
+        <Route path="horario" element={<Schedule />} />
+        <Route path="clases" element={<Lessons />} />
+        <Route path="precios" element={<Prices />} />
         <Route path="admin" element={<Admin />} />
       </Routes>
     </BrowserRouter>
