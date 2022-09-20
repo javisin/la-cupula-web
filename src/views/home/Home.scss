@@ -1,0 +1,24 @@
+.Home {
+  .quote {
+    position: relative;
+    text-align: center;
+    color: white;
+  }
+  .quote-logo{
+    opacity: 0.2;
+  }
+
+  /* Centered text */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  p {
+    font-family: 'Merriweather', serif;
+  }
+  h5 {
+    font-family: 'Blacker', serif;
+  }
+}
