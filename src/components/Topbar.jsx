@@ -7,7 +7,7 @@ import { Menu } from '@mui/icons-material';
 
 export default function Topbar({ handleOnClick }) {
   return (
-    <AppBar position="static" className="app-header">
+    <AppBar position="sticky" className="app-header">
       <Toolbar>
         <IconButton
           color="inherit"
@@ -27,7 +27,7 @@ export default function Topbar({ handleOnClick }) {
             mr: 2,
             display: { md: 'flex' },
             fontWeight: 700,
-            letterSpacing: '.3rem',
+            letterSpacing: '.2rem',
             color: 'inherit',
             textDecoration: 'none',
           }}
