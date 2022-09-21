@@ -1,4 +1,4 @@
-.Inscription {
+.Admin {
   input {
     background-color: #ebebeb;
     border: 1px solid #ebebeb;
@@ -9,6 +9,7 @@
     line-height: 18px;
     width: 100%;
   }
+
   label {
     width: 80%;
   }
@@ -26,23 +27,5 @@
     min-width: 121px;
     outline: none;
     width: 20%;
-  }
-
-  img {
-    width: 35%;
-  }
-
-  textarea {
-    background-color: #ebebeb;
-    border: 1px solid #ebebeb;
-    padding: 15px;
-    height: 200px;
-    display: inline-block;
-    font-size: 14px;
-    line-height: 18px;
-    &:focus {
-      outline: none;
-    }
-    width: 100%;
   }
 }

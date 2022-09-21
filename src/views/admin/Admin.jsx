@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { collection, getDocs } from 'firebase/firestore';
 import db from '../../firebase';
+import './Admin.scss';
 
 function Admin() {
   const [email, setEmail] = useState('');
@@ -55,7 +56,7 @@ function Admin() {
         </div>
 
         <div className="row justify-content-center">
-          <button type="submit">Entrar</button>
+          <button className="submit-button" type="submit">Entrar</button>
         </div>
       </form>
 
@@ -66,15 +67,15 @@ function Admin() {
         {users.map((user) => (
           <div key={user.email} className="row m-1">
             <div className="col-2">
-              {user.name}
-            </div>
-
-            <div className="col-2">
-              {user.surname}
+              {`${user.name} ${user.surname}`}
             </div>
 
             <div className="col-2">
               {user.category}
+            </div>
+
+            <div className="col-2">
+              {user.belt}
             </div>
 
             <div className="col-2">

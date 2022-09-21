@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Inscription.scss';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, getDoc } from 'firebase/firestore';
 import db from '../../firebase';
 import logo from '../../assets/logo-black.svg';
 import Page from '../../components/Page';
@@ -13,15 +13,23 @@ function Inscription() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [category, setCategory] = useState('adult');
-  const [showMessage, setShowMessage] = useState(false);
+  const [belt, setBelt] = useState('white');
+  const [observations, setObservations] = useState('');
+  const [responseMessage, setResponseMessage] = useState('');
   const [isKid, setIsKid] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const docRef = doc(db, 'users', email);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      setResponseMessage('Este email ya está registrado.');
+      return;
+    }
     await setDoc(doc(db, 'users', email), {
-      name, surname, phone, email, category, contactName, contactSurname,
+      name, surname, phone, email, category, belt, contactName, contactSurname, observations,
     });
-    setShowMessage(true);
+    setResponseMessage('¡Inscripción completada con éxito!');
   };
 
   const handleCategoryChange = (e) => {
@@ -38,8 +46,9 @@ function Inscription() {
           ¡Únete al equipo!
         </h3>
         <form className="container" onSubmit={handleSubmit}>
+
           <div className="row justify-content-center">
-            <label htmlFor="email">
+            <label htmlFor="category">
               <strong>Categoría</strong>
               <select value={category} onChange={handleCategoryChange}>
                 <option value="kids-1">Infantil 1 (4-6 años)</option>
@@ -50,6 +59,27 @@ function Inscription() {
               </select>
             </label>
           </div>
+
+          {!isKid
+            && (
+              <div className="row justify-content-center">
+                <label htmlFor="belt">
+                  <strong>Cinturón</strong>
+                  <select value={belt} onChange={(e) => setBelt(e.target.value)}>
+                    <option value="white">Blanco</option>
+                    <option value="blue">Azul</option>
+                    <option value="purple">Morado</option>
+                    {category !== 'youth-2'
+                      && (
+                        <>
+                          <option value="brown">Marrón</option>
+                          <option value="black">Negro</option>
+                        </>
+                      )}
+                  </select>
+                </label>
+              </div>
+            )}
 
           <div className="row justify-content-center">
             <label htmlFor="name">
@@ -100,16 +130,20 @@ function Inscription() {
             </label>
           </div>
 
+          <div className="row justify-content-center">
+            <label htmlFor="observations">
+              <strong>Observaciones</strong>
+              <textarea value={observations} onChange={(e) => setObservations(e.target.value)} />
+            </label>
+          </div>
+
           <div className="row justify-content-center mt-2">
             <button className="submit-button" type="submit">Unirse</button>
           </div>
 
-          {showMessage
-            && (
-              <div className="row mt-3 justify-content-center">
-                <p>¡Inscripción completada con éxito!</p>
-              </div>
-            )}
+          <div className="row mt-3 justify-content-center">
+            <p>{responseMessage}</p>
+          </div>
 
         </form>
         <div className="row justify-content-end">
