@@ -1,0 +1,10 @@
+.Groups {
+  select {
+    max-width: 25% !important;
+  }
+  @media (max-width: 479px) {
+    select {
+      max-width: 85% !important;
+    }
+  }
+}

@@ -7,8 +7,8 @@ import Inscription from './views/inscription/Inscription';
 import Admin from './views/admin/Admin';
 import Home from './views/home/Home';
 import Schedule from './views/schedule/Schedule';
-import Lessons from './views/lessons/Lessons';
 import Prices from './views/prices/Prices';
+import Groups from './views/lessons/Groups';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -19,7 +19,7 @@ root.render(
         <Route path="/" element={<Home />} />
         <Route path="inscripcion" element={<Inscription />} />
         <Route path="horario" element={<Schedule />} />
-        <Route path="clases" element={<Lessons />} />
+        <Route path="clases" element={<Groups />} />
         <Route path="precios" element={<Prices />} />
         <Route path="admin" element={<Admin />} />
       </Routes>
