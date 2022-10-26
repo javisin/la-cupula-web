@@ -56,11 +56,12 @@ function Inscription() {
                 <option value="youth-1">Juvenil 1 (12-14 años)</option>
                 <option value="youth-2">Juvenil 2 (14-17 años)</option>
                 <option value="adult">Adulto (+18)</option>
+                <option value="kick-boxing">Kick Boxing</option>
               </select>
             </label>
           </div>
 
-          {!isKid
+          {!isKid && category !== 'kick-boxing'
             && (
               <div className="row justify-content-center">
                 <label htmlFor="belt">

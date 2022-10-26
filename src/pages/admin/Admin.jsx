@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { collection, getDocs } from 'firebase/firestore';
 import db from '../../firebase';
@@ -62,24 +62,18 @@ function Admin() {
 
       {isLogged
       && (
-      <div>
+      <div className="mx-2">
         <h3>Usuarios inscritos</h3>
         {users.map((user) => (
           <div key={user.email} className="row m-1">
-            <div className="col-2">
-              {`${user.name} ${user.surname}`}
+            <div className="col-8">
+              <NavLink to={`/alumnos/${user.email}`}>
+                {`${user.name} ${user.surname}`}
+              </NavLink>
             </div>
 
-            <div className="col-2">
+            <div className="col-4">
               {user.category}
-            </div>
-
-            <div className="col-2">
-              {user.belt}
-            </div>
-
-            <div className="col-2">
-              {user.email}
             </div>
           </div>
         ))}
