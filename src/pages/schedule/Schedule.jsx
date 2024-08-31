@@ -10,7 +10,7 @@ function Schedule() {
         <div className="container mt-3 text-center">
           <h3>Horarios</h3>
           <img className="w-75 mb-3" src={schedule1} alt="Horario mañana" />
-          <br/>
+          <br />
           <img className="w-75 mb-3" src={schedule2} alt="Horario tarde" />
           <br />
         </div>
