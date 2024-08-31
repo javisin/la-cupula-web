@@ -1,7 +1,6 @@
 import React from 'react';
 import Page from '../../components/Page';
 import logo from '../../assets/logo.svg';
-import home from '../../assets/home.jpeg';
 import './Home.scss';
 
 function Home() {
@@ -48,7 +47,6 @@ function Home() {
               También es posible el registro de forma presencial solicitando una cita previa para la inscripción.
             </p>
           </div>
-          <img className="d-block mx-auto presentation-img" src={home} alt="Presentación" />
         </div>
       </Page>
     </div>
