@@ -1,7 +1,7 @@
 import React from 'react';
 import './Prices.scss';
 import Page from '../../components/Page';
-import prices from '../../assets/precios.jpeg';
+import prices from '../../assets/precios.png';
 
 function Prices() {
   return (
